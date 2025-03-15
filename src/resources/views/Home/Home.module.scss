@@ -1,0 +1,20 @@
+.space-between{
+    justify-content: space-between; /* Đẩy thẻ thứ 2 về bên phải */
+    align-items: center; 
+    margin-top: 20px ;
+    margin-bottom: 20px ;
+}
+
+.line-between{
+    text-decoration: none;
+    color: black;
+    &::before{
+        position: absolute;
+        content: "";
+        top: 3px;
+        right: 215px;
+        width: 1px;
+        background-color: black;
+        height: 20px;
+    }
+}

@@ -4,13 +4,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faHeartCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 const cx = classNames.bind(styles);
 
 function Header() {
+  const [activeTab, setActiveTab] = useState('home');
   return (
    <div className={cx('header')}>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg ">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             <img className={cx('img-logo')} src="/img/logo.png" alt="" />

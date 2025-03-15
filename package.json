@@ -14,7 +14,12 @@
     "@tippyjs/react": "^4.2.6",
     "bootstrap": "^5.3.3",
     "classnames": "^2.5.1",
+    "cors": "^2.8.5",
     "customize-cra": "^1.0.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-react-views": "^0.11.0",
+    "mongoose": "^8.12.1",
     "normalize.css": "^8.0.1",
     "react": "^18.3.1",
     "react-app-rewired": "^2.2.1",
@@ -47,5 +52,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "Developing a MERN Stack real estate web application aimed at providing comprehensive property listings for buyers and renters.  This platform will offer detailed property information, filtering options, and an intuitive search experience to help users find the perfect home.",
+  "main": "nodeserver.js",
+  "author": "",
+  "license": "ISC"
 }

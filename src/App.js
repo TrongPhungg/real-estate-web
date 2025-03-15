@@ -1,14 +1,30 @@
 
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {Header} from "../src/components/Layout";
+import { Home } from './resources/views';
+import { Fragment } from 'react';
+import { publicRoutes } from './routes';
+import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-    </div>
+    <Router>
+         <div className="App">
+            <Routes>
+               {publicRoutes.map((route,index) => {
+                  const Page = route.component;
+
+                  let Layout = Header;
+                  if(route.layout)
+                     Layout = route.layout;
+                  else if(route.layout === null){
+                     Layout=Fragment;
+                  }
+                  return <Route key={index} path={route.path} element={<Fragment><Layout></Layout><Page></Page></Fragment>}></Route>
+               })}
+            </Routes>
+         </div>
+      </Router>
   );
 }
 
