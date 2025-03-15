@@ -1,0 +1,62 @@
+.header{
+    width: 1485px;
+    height: 53px;
+    margin: 18px;
+}
+
+.img-logo{
+    width: 150px;
+    height: 100%;
+}
+
+.header-btn{
+    width: 60px;
+    height: 23px;
+    border: 0.8px solid ;
+    padding: 14px 17px;
+}
+
+
+.nav-container {
+    display: flex;
+    flex-direction: row; /* Chuyển sang hàng ngang */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 10px; /* Tạo khoảng cách giữa các item */
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 60px;
+    border: none;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    color:#000;
+    cursor: pointer;
+    &:hover{
+        background-color: #f0f0f0;
+        border-radius: 15px;
+    }
+}
+
+.border{
+    border: 1px solid #868383;
+    border-radius: 15px;
+}
+
+.heart{
+    width: 30px;
+    height: 30px;
+    margin: 20px;
+}
+
+.text-header{
+    color: #000;
+    font-weight: 500;
+    
+}
+
