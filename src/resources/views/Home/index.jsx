@@ -1,7 +1,8 @@
 import classNames from "classnames/bind";
 import React from "react";
 import styles from "./Home.module.scss";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
+import Card from "./Card";
 
 const cx = classNames.bind(styles);
 
@@ -9,7 +10,7 @@ function Home() {
   const [activeTab, setActiveTab] = useState("home");
   const [properties, setProperties] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/api/course") // Thay thế bằng API backend của bạn
+    fetch("http://localhost:5000/api/estate") // Thay thế bằng API backend của bạn
       .then((response) => response.json())
       .then((data) => setProperties(data))
       .catch((error) => console.error("Error fetching properties:", error));
@@ -167,55 +168,60 @@ function Home() {
       </div>
 
       <div className="container">
-          <div class="row">
-            {/* <div class="col-sm-4 mb-3 mb-sm-0">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">
-                    With supporting text below as a natural lead-in to additional
-                    content.
-                  </p>
-                  <a href="#" class="btn btn-primary">
-                    Go somewhere
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">
-                    With supporting text below as a natural lead-in to additional
-                    content.
-                  </p>
-                  <a href="#" class="btn btn-primary">
-                    Go somewhere
-                  </a>
-                </div>
-              </div>
-            </div> */}
-             {properties.length > 0 ? (
+        <div class="row">
+          {properties.length > 0 ? (
             properties.map((property) => (
-              <div key={property.id} className="col-sm-4 mb-3">
-                <div className="card">
-                  <img src={property.image} className="card-img-top" alt="property" />
-                  <div className="card-body">
-                    <h5 className="card-title">{property.title}</h5>
-                    <p className="card-text">{property.description}</p>
-                    <a href="#" className="btn btn-primary">
-                      Xem chi tiết
-                    </a>
-                  </div>
-                </div>
-              </div>
+              // <div key={property.id} className="col">
+              //   <div className="card h-100 shadow-sm border-0">
+              //     {/* Hình ảnh */}
+              //     <img
+              //       src={property.image}
+              //       className="card-img-top rounded-top"
+              //       alt={property.title || "Hình ảnh bất động sản"}
+              //       style={{ height: "200px", objectFit: "cover" }}
+              //     />
+
+              //     {/* Nội dung */}
+              //     <div className="card-body">
+              //       <h5 className="card-title text-truncate">
+              //         {property.title}
+              //       </h5>
+              //       <p className="card-text text-muted small">
+              //         📍 {property.address}, {property.ward},{" "}
+              //         {property.district}, {property.city}
+              //       </p>
+
+              //       {/* Giá */}
+              //       <p className="text-success fw-bold">
+              //         {property.price
+              //           ? `${property.price.toLocaleString()} VND`
+              //           : "Liên hệ"}
+              //       </p>
+
+              //       {/* Thông tin chi tiết */}
+              //       <div className="d-flex flex-wrap gap-2 text-muted small">
+              //         <span>📏 {property.area}m²</span>
+              //         <span>🛏 {property.bedrooms} PN</span>
+              //         <span>🚿 {property.bathrooms} WC</span>
+              //         <span>🏢 {property.floor} tầng</span>
+              //         <span>
+              //           🛋 {property.furniture ? "Có nội thất" : "Không có"}
+              //         </span>
+              //       </div>
+
+              //       {/* Nút bấm */}
+              //       <a href="#" className="btn btn-primary mt-3 w-100">
+              //         Xem chi tiết
+              //       </a>
+              //     </div>
+              //   </div>
+              // </div>
+                <Card property={property}/>
             ))
           ) : (
             <p>Đang tải dữ liệu...</p>
           )}
-
-          </div>
+        </div>
       </div>
     </div>
   );

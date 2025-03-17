@@ -1,6 +1,5 @@
-import { Home } from "../resources/views";
+import  {Home}  from "../resources/views";
 import Details from "../resources/views/Details";
-
 
 const publicRoutes =[
     {
@@ -8,9 +7,12 @@ const publicRoutes =[
         component: Home,
     },
     {
-        path:"/Details",
+        path:"/details",
         component:Details,
     }
 ]
 
 export {publicRoutes}
+
+
+
